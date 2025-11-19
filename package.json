@@ -1,0 +1,20 @@
+{
+  "name": "learn_to_node_commands_terminal",
+  "version": "1.0.0",
+  "description": "Learn how to use node commands via your terminal",
+  "homepage": "https://github.com/BeastTheNinja/Learn_To_Node_Commands_Terminal#readme",
+  "bugs": {
+    "url": "https://github.com/BeastTheNinja/Learn_To_Node_Commands_Terminal/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BeastTheNinja/Learn_To_Node_Commands_Terminal.git"
+  },
+  "license": "ISC",
+  "author": "Sebastian L",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
