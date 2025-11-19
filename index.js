@@ -1,11 +1,11 @@
 import http from "http";
-
+const port = 4000;
 http
   .createServer((request, response) => {
     response.writeHead(200, { "Content-Type": "text/plain" });
-    response.end("ny dag i denne verden!");
+    response.end("verden!");
     console.log('Server responded with "Hello, world!"');
   })
-  .listen(4000, () => {
-    console.log("Server is running on http://localhost:4000");
+  .listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
   });
