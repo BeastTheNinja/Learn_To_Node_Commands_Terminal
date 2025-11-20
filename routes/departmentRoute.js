@@ -7,17 +7,9 @@ router.get('/', (req, res) => {
     res.send('Afdelingsliste');
 })
 
-router.get('/jylland', (req, res) => {
-    console.log('Afdelinger i Jylland');
-    res.send('Afdelinger i Jylland');
+router.get('/:region', (req, res) => {
+    res.send(`Afdelinger i region: ${req.params.region}`);
 })
-router.get('/fyn', (req, res) => {
-    console.log('Afdelinger i Fyn');
-    res.send('Afdelinger i Fyn');
-})
-router.get('/sjaelland', (req, res) => {
-    console.log('Afdelinger i Sjaelland');
-    res.send('Afdelinger i Sjaelland');
-})
+
 
 export { router as departmentRouter };

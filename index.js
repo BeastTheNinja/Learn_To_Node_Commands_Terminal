@@ -17,9 +17,6 @@ app.get("/", (req, res) => {
 app.use('/cars', carRouter);
 app.use('/about', aboutRouter);
 app.use('/departments', departmentRouter);
-app.use('/departments/:jylland', departmentRouter);
-app.use('/departments/:fyn', departmentRouter);
-app.use('/departments/:sjaelland', departmentRouter);
 app.use('/contact', contactRouter);
 
 app.listen(PORT, () => {
