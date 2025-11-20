@@ -1,5 +1,8 @@
 import express from "express";
-import { carRouter } from "./routes/carRoute";
+import { carRouter } from "./routes/carRoute.js";
+import { aboutRouter } from "./routes/aboutRoute.js";
+import { departmentRouter } from "./routes/departmentRoute.js";
+import { contactRouter } from "./routes/contactRoute.js";
 
 
 const PORT = 3000;
@@ -12,6 +15,12 @@ app.get("/", (req, res) => {
 });
 
 app.use('/cars', carRouter);
+app.use('/about', aboutRouter);
+app.use('/departments', departmentRouter);
+app.use('/departments/:jylland', departmentRouter);
+app.use('/departments/:fyn', departmentRouter);
+app.use('/departments/:sjaelland', departmentRouter);
+app.use('/contact', contactRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
