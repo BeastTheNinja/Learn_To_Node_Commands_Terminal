@@ -8,7 +8,9 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:region', (req, res) => {
-    res.send(`Afdelinger i region: ${req.params.region}`);
+    const region = req.params.region;
+    console.log(`Afdelinger i region: ${region}`);
+    res.send(`Afdelinger i region: ${region}`);
 })
 
 
