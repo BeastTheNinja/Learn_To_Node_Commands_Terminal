@@ -1,9 +1,6 @@
 import express from "express";
 
 const ROOT = 3000;
-const ABOUT = 4000;
-const CONTACT = 5000;
-const CARS = 6000;
 
 const app = express();
 
