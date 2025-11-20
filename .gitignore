@@ -9,5 +9,5 @@ yarn-error.log*
 # Ignore package manifest locally (if you prefer not to track it)
 package.json
 package-lock.json
-
+.env
  
