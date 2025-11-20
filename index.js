@@ -1,6 +1,8 @@
 import express from "express";
+import { carRouter } from "./routes/carRoute";
 
-const ROOT = 3000;
+
+const PORT = 3000;
 
 const app = express();
 
@@ -9,21 +11,8 @@ app.get("/", (req, res) => {
   console.log("yoyo");
 });
 
-app.get("/about", (req, res) => {
-  res.send("about page");
-  console.log("about pages here ");
-});
+app.use('/cars', carRouter);
 
-app.get("/contact", (req, res) => {
-  res.send("contact page");
-  console.log("contact pages here ");
-});
-
-app.get("/cars", (req, res) => {
-  res.send("cars page");
-  console.log("cars pages here ");
-});
-
-app.listen(ROOT, () => {
-  console.log(`Server is running on http://localhost:${ROOT}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
