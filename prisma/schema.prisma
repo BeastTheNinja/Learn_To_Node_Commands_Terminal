@@ -18,4 +18,29 @@ model User {
   id  Int   @id @default(autoincrement())
   name String
   email String @unique
+  createdAt DateTime @default(now())
+}
+model Car {
+  id         Int      @id @default(autoincrement())
+  categoryId Int
+  category   Category @relation(fields: [categoryId], references: [id])
+  brandId    Int
+  brand      Brand    @relation(fields: [brandId], references: [id])
+  model      String
+  year       Int
+  price      Float
+  fuelType   String
+}
+
+model Category {
+  id   Int   @id @default(autoincrement())
+  name String
+  cars Car[]
+}
+
+model Brand {
+  id   Int   @id @default(autoincrement())
+  name String
+  logo String
+  cars Car[]
 }
