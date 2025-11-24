@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
   console.log("yoyo");
 });
 
-app.use("/cars", carRouter);
+app.use("/api/cars", carRouter);
 app.use("/about", aboutRouter);
 app.use("/departments", departmentRouter);
 app.use("/contact", contactRouter);
