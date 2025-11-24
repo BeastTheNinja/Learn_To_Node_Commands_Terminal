@@ -1,18 +1,16 @@
 import { Router } from "express";
-import {
-  getRecords,
-  getRecord,
-  createRecord,
-  updateRecord,
-  deleteRecord,
-} from "../controllers/carController.js";
 
 const router = Router();
 
-router.get("/", getRecords);
-router.get("/:id", getRecord);
-router.post("/", createRecord);
-router.put("/:id", updateRecord);
-router.delete("/:id", deleteRecord);
+router.get("/", (req, res) => {
+  console.log("liste af biler");
+  res.send("liste af biler");
+});
+
+router.get("/:id", (req, res) => {
+  const id = Number(req.params.id);
+  console.log(`Bil detaljer ${id}`);
+  res.send(`Bil detaljer: ${id}`);
+});
 
 export { router as carRouter };

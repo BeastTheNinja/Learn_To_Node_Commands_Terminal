@@ -1,33 +1,9 @@
-import { prisma } from "../prisma.js";
+import { prisma } from "../prismaClient.js";
 
-export const getRecords = async (req, res) => {
-  try {
-    console.log("carController: getRecords");
-    const data = await prisma.car.findMany({
-      include: {
-        brand: { select: { id: true, name: true } },
-        category: { select: { id: true, name: true } },
-      },
-    });
-    res.json(data);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send(`DB Fejl: Kunne ikke hente liste af biler`);
-  }
-};
+export const createRecord = async (req, res) => {
+  const { category, brand, model, year, price, fueltype } = req.body;
 
-export const getRecord = async (req, res) => {
-  try {
-    const id = Number(req.params.id);
-    console.log(`carController: getRecord ${id}`);
-    const record = await prisma.car.findUnique({
-      where: { id },
-      include: { brand: true, category: true },
-    });
-    if (!record) return res.status(404).send(`Bil ikke fundet`);
-    res.json(record);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send(`DB Fejl: Kunne ikke hente bilen`);
+  if (!category || !brand || !model || !year || !price || !fueltype) {
+    return res.status(400).send("All fields are required");
   }
 };
