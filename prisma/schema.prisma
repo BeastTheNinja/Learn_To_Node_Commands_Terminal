@@ -30,7 +30,7 @@ price Float
 fuelType String
 }
 
-model caregories {
+model categories {
   id Int @id @default(autoincrement())
   name String
 }
