@@ -5,14 +5,14 @@ import {
   createRecord,
   updateRecord,
   deleteRecord,
-} from "../controllers/carController.js";
+} from "../controllers/brandController.js";
 
 const router = Router();
 
 router.get("/", getRecords);
 router.get("/:id", getRecord);
-router.post("/", expressJsonMiddleware, createRecord);
-router.put("/:id", expressJsonMiddleware, updateRecord);
+router.post("/", createRecord);
+router.put("/:id", updateRecord);
 router.delete("/:id", deleteRecord);
 
-export { router as carRouter };
+export { router as brandRouter };
